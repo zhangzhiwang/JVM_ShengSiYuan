@@ -1,4 +1,4 @@
-package com.asiainfo;
+package net.asiainfo;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
