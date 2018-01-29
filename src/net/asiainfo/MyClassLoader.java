@@ -94,4 +94,8 @@ public class MyClassLoader extends ClassLoader {// 自定义类加载器只需�
 		return null;
 	}
 
+	@Override
+	public String toString() {
+		return "MyClassLoader [name=" + name + "]";
+	}
 }
