@@ -57,7 +57,7 @@ public class MyClassLoader extends ClassLoader {// 自定义类加载器只需�
 		byte[] data = null;
 
 		try {
-			in = new FileInputStream(new File(classPath + fullName));
+			in = new FileInputStream(new File(classPath + fullName + ".class"));
 			baos = new ByteArrayOutputStream();
 
 			int ch = 0;
@@ -71,7 +71,7 @@ public class MyClassLoader extends ClassLoader {// 自定义类加载器只需�
 			// step 3:将字节数组转换成Class对象
 			return defineClass(fullName, data, 0, data.length);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		} finally {
 			if (baos != null) {
 				try {
@@ -91,5 +91,9 @@ public class MyClassLoader extends ClassLoader {// 自定义类加载器只需�
 
 		return null;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "MyClassLoader [name=" + name + "]";
+	}
 }
